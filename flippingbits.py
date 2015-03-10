@@ -7,7 +7,6 @@ you get by flipping bits in its binary representation
 
 def bitrep(n):
 	""" Returns the signed 32-bit binary representation of an integer. """
-	
 	arr = []
 	reversed_arr = []
 	j=0
