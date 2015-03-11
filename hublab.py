@@ -1,4 +1,6 @@
 import json
+import re
+
 from pygithub3 import Github
 import gitlab
 
@@ -6,7 +8,7 @@ import gitlab
 gl = gitlab.Gitlab("141.209.28.74", token="1isGAgVpjqresUDkwRNB", verify_ssl=False)
 
 # github
-auth = dict(login='marcusshepp', password='MJS33shep')
+auth = dict(login='#', password='#')
 gh = Github(**auth)
 
 project_ids = {
@@ -14,24 +16,13 @@ project_ids = {
 	'centraldesk': 62,
 	'sodium': 2,
 }
-urec = project_ids['urec']
-
-
-projects = gl.getprojects(per_page=100) # defaults to 20 results
-# for i in range(len(projects)):
- 	# print "-----"
- 	# print projects[i]['id']
- 	# print gl.getproject(projects[i]['id'])['http_url_to_repo']
-	
-issues = gl.getprojectissues(urec, per_page=100) # defaults to 20 results
+issues = gl.getprojectissues(project_ids['urec'], per_page=100) # defaults to 20 results
 for i in range(len(issues)):
+	date = gl.getprojectissues(project_ids['urec'])[i]['created_at']
 
 	data = {
-	'title': gl.getprojectissues(urec)[i]['title'],
-	'body': gl.getprojectissues(urec)[i]['description'],
+	'title': gl.getprojectissues(project_ids['urec'])[i]['title'],
+	'body': "Date: "+ " ".join(re.split("T|\\.", date)[:2])+"\n"+" Desciption: "+gl.getprojectissues(project_ids['urec'])[i]['description'],
+
 	}
-	gh.issues.create(data, user='marcusshepp', repo='cmu-techops/sodium')
-	
-result = gh.repos.list_by_org('cmu-techops')
-for resource in result.iterator():
-	print resource
+	gh.issues.create(data, user='#', repo='#')
