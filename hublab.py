@@ -8,6 +8,11 @@ import gitlab
 Short Script for iterating over issues in a gitlab project.
 Then creating each issue in a specified repo on GitHub.
 All values with '#' must be filled in by user.
+
+requirements:
+pyapi-gitlab==7.5.0
+pygithub3==0.5.1
+requests==2.5.3
 """
 
 #gitlab
