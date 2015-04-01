@@ -15,7 +15,7 @@ pygithub3==0.5.1
 requests==2.5.3
 """
 
-#gitlab
+# gitlab
 gl = gitlab.Gitlab("141.209.28.74", token="#", verify_ssl=False)
 
 # github
@@ -40,4 +40,4 @@ for i in range(len(issues)):
 	'body': "Date: "+ " ".join(re.split("T|\\.", date)[:2])+"\n"+" Desciption: "+gl.getprojectissues(project_ids['urec'])[i]['description'],
 
 	}
-	gh.issues.create(data, user='#', repo='#')
+	gh.issues.create(data, repo='#')
