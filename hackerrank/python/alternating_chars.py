@@ -7,11 +7,9 @@ def find_minimum_deletions(s):
 	"""
 
 	deletions = 0
-	j=1
 	for i in range(len(list(s))-1):
-		if s[i] == s[j]:
+		if s[i] == s[i+1]:
 			deletions+=1
-		j+=1
 	return deletions
 
 print find_minimum_deletions("AAAA")
