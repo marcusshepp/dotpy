@@ -12,6 +12,10 @@ def find_minimum_deletions(s):
 			deletions+=1
 	return deletions
 
+# for i in range(int(raw_input())):
+# 	print find_minimum_deletions(raw_input())
+
+
 print find_minimum_deletions("AAAA")
 print find_minimum_deletions("BBBBB")
 print find_minimum_deletions("abababab")

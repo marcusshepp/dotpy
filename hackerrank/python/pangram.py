@@ -21,4 +21,4 @@ def pangram(s):
 	else:
 		return "not pangram"
 
-print pangram(str(input()))
+print pangram(raw_input())

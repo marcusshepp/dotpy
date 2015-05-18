@@ -10,7 +10,7 @@ def class_cancelled(numofstudneeded, arrivaltimes):
 
 	
 
-for item in range(int(input())):
+for item in range(int(raw_input())):
 	s = raw_input()
 	x = str(s).split()
 	numofstudents = x[0]
