@@ -12,31 +12,15 @@ and tens' position. So for this case, our answer is 3.
 Division by 0 is undefined.
 """
 
-def is_duplicate_num(n):
-	""" Returns True if an integer has dublicate values. """
-	
-	count = 0
-	x = [x for x in str(n)]
-	for i in range(len(x)):
-		if x.count(x[i]) > 1:
-			count += 1
-	if count > 1:
-		return True
-	else:
-		return False	
+def f(l, n):
+	x = [i for i in l if i != 0]
+	x = [i for i in x if n%i == 0]
+	return x
 
-def find_digits(n):
-
-	count, i = 0, 0
-	if is_duplicate_num(n):
-		count += 1
-	while i <= n:
-		if i % n == 0:
-			count += 1 
-		i += 1
-	return count
-
-
+def find_digits(hmm):
+	_s = [int(x) for x in str(hmm)]
+	_s = f(_s, hmm)
+	return len(_s) 
 
 for i in range(int(raw_input())):
 	print find_digits(int(raw_input()))
