@@ -1,7 +1,8 @@
 class Graph(object):
     
     """
-    Representation of a Graph as an adjacency-list.
+    Implementation of an undirect Graph API 
+    using the adjacency_list representation
     """
     
     def __init__(self):
