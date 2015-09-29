@@ -1,8 +1,8 @@
-class DFS(object):
+class BFS(object):
     
     """
-    Performs a Depth-first search on an undirected Graph.
-    Stack LIFO
+    Performs a Bredth-first search on an undirected Graph.
+    Queue FIFO
     """
     
     def __init__(self, graph, starting_vertex):
