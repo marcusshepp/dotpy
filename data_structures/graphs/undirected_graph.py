@@ -2,7 +2,8 @@ class Graph(object):
     
     """
     Implementation of an undirect Graph API 
-    using the adjacency_list representation
+    using the adjacency_list representation.
+    Verticies can be strings or integers.
     """
     
     def __init__(self):
@@ -41,11 +42,11 @@ class Graph(object):
             string.append("-->")
             string.append(values)
         return " ".join(str(v) for v in string)
-
-g = Graph()
-g.add_edge("a", "b")
-g.add_edge("a", "c")
-g.add_edge("b", "c")
-g.add_edge("c", "d")
-print g.adjacency_list
-print g.to_string()
+        
+# g = Graph()
+# g.add_edge("a", "b")
+# g.add_edge("a", "c")
+# g.add_edge("b", "c")
+# g.add_edge("c", "d")
+# print g.adjacency_list
+# print g.to_string()
