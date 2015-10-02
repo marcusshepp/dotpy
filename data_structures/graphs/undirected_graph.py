@@ -7,6 +7,7 @@ class Graph(object):
     """
     
     def __init__(self):
+        # testing github emotes in commit messages.
         self.verticies = []
         self.num_of_verticies = len(self.verticies)
         self.num_of_edges = self.num_of_verticies - 1
