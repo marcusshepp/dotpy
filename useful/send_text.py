@@ -27,7 +27,7 @@ try:
 	print "Searching reddit for:", subject
 	smtp_obj = smtplib.SMTP("smtp.gmail.com", 587)
 	smtp_obj.starttls()
-	smtp_obj.login("marcusshepdotcom@gmail.com", "MJS33shep")
+	smtp_obj.login("<username>", "<password>")
 	smtp_obj.sendmail(sender, receiver, message)
 	print "Auth was successful... Now sending email to: ", receiver
 finally:
